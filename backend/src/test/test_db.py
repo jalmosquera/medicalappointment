@@ -1,6 +1,11 @@
+from core.db.db import engine, get_session
 from sqlmodel import text
 
-from core.db.db import get_session
+
+def test_database_connection():
+    with engine.connect() as connection:
+        result = connection.execute(text("SELECT 1"))
+        assert result.scalar() == 1
 
 
 def test_database_session():
