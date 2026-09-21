@@ -1,6 +1,14 @@
 from fastapi import APIRouter, Query
 
+from src.core.patiends.models import PatientCreate
+
 router = APIRouter()
+
+
+@router.post("/patients")
+def create_patiends(patiends: PatientCreate) -> dict:
+    data = {"name": patiends.name, "email": patiends.email, "age": patiends.age}
+    return data
 
 
 @router.get("/patients")
