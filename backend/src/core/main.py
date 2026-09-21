@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+
 from core.patiends.routes import router as patiendsRouter
 
 app = FastAPI()
