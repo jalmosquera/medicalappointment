@@ -1,5 +1,6 @@
-from core.db.db import engine, get_session
 from sqlmodel import text
+
+from core.db.db import engine, get_session
 
 
 def test_database_connection():
